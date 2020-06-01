@@ -10,6 +10,28 @@ let symbolArray = ["~","{","|","}","`","_","^","[","]","@","?",">","<","=",";","
 
 // This is where we will begin our password generator function
 function writePassword() {
+  let passwordLength= prompt("Enter number of desired characters for password")
+  if (passwordLength <8 || passwordLength>128) {
+    alert("Password must be greater than 8 characters and less than 128 characters")
+  }
+  else {
+    if (confirm("Click 'Okay' if would you like to include lowercase letters")) {
+
+    }
+
+
+    if (confirm("Click 'Okay' if you would like to add UPPERCASE letters")) {
+
+    }
+
+    if (confirm("Click 'Okay' if you would you like to add numbers (#'s)")) {
+
+    }
+
+    if (confirm("Click 'Okay' if you would you like to add special characters ($%*#)")) {
+
+
+    }
   }
 //this is where we will write the code to be executed -YI
   let password = generatePassword();
@@ -42,7 +64,7 @@ generateBtn.addEventListener("click", writePassword);
 //THEN I choose lowercase, 
 //uppercase, 
 //numeric, 
-//and/or special characters  (I will probably us the || and && here)
+//and/or special characters  (I will probably use the || and && here)
 
 //WHEN I answer each prompt
 //THEN my input should be validated and at least one character type should be selected

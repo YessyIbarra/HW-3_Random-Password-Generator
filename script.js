@@ -1,22 +1,29 @@
 // This is where we are capturing the element (in HTML file) so we have refrence to it here
 let generateBtn = document.querySelector("#generate");
 
+// Adding event listener to have the 'writepassword' function run when button is clicked
+generateBtn.addEventListener("click", writePassword);
 //These are my array variables
-let abcLowerArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v", "w", "x","y","z"];
-let abcUpperArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V", "W", "X","Y","Z"];
-let numberArray = ["0","1","2","3","4","5","6","7","8","9"];
-let symbolArray = ["~","{","|","}","`","_","^","[","]","@","?",">","<","=",";",":","/",".","-",",","+","*","(",")","&","%","$","#"];
+const abcLowerArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v", "w", "x","y","z"];
+const abcUpperArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V", "W", "X","Y","Z"];
+const numberArray = ["0","1","2","3","4","5","6","7","8","9"];
+const symbolArray = ["~","{","|","}","`","_","^","[","]","@","?",">","<","=",";",":","/",".","-",",","+","*","(",")","&","%","$","#"];
 
 
 // This is where we will begin our password generator function
+//Need to add empty string for the new generated password
+//Add empty array to push all constant variables into
 function writePassword() {
-  let passwordLength= prompt("Enter number of desired characters for password")
+  let newPassword = "";
+  let passwordCharacters = [];
+  let passwordLength = prompt("Enter number of desired characters for password")
   if (passwordLength <8 || passwordLength>128) {
     alert("Password must be greater than 8 characters and less than 128 characters")
   }
   else {
     if (confirm("Click 'Okay' if would you like to include lowercase letters")) {
-
+//Here I want to merge the two arrays (lower case array and the empty array) 
+      Array.prototype.push.(passwordCharacters, abcLowerArray);
     }
 
 
@@ -44,8 +51,6 @@ function writePassword() {
 
 }
 
-// Add event listener to have the button activated when "clicked"
-generateBtn.addEventListener("click", writePassword);
 
 
 //## Acceptance Criteria

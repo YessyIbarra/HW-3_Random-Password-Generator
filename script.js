@@ -49,6 +49,7 @@ function writePassword() {
 }
 
   //this is where we need to figure out how to print password to screen after we convert the array of numbers to a string. 
+  //let realNewPassword = newPassword.toString()
   //let passwordText = document.querySelector("#password");
   //passwordText.value = newPassword;
 

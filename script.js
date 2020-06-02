@@ -12,17 +12,22 @@ const symbolArray = ["~", "{", "|", "}", "`", "_", "^", "[", "]", "@", "?", ">",
 
 
 // This is where we will begin our password generator function
-//Need to add empty string for the new generated password
-//Add empty array to push all constant variables into
+// Vision is to take all possible options and merge them into an empty array
+
+//Begin Function
 function writePassword() {
   let newPasswordArray = [];
   let passwordCharacters = [];
   let passwordLength = prompt("Enter number of desired characters for password")
   let num1 = parseInt (passwordLength);
   if (num1) { //If user answers this is a string if a user doesnt answer it's null 
+    if (num1 < 8 || num1 > 128) {  
+      alert("Just stop bro");
+    }
+    else{ 
     if (confirm("Click 'Okay' if would you like to include lowercase letters")) {
-      //Here I want to merge the two arrays (lower case array and the empty array) 
-      passwordCharacters.push.apply(passwordCharacters, abcLowerArray);
+
+      passwordCharacters.push.apply(passwordCharacters, abcLowerArray); //Here I want to merge the two arrays (lower case array and the empty array) 
       console.log(passwordCharacters);
     }
 
@@ -43,6 +48,9 @@ function writePassword() {
     console.log(typeof num1);
     console.log(passwordCharacters);
 
+    if (passwordCharacters.length===0) {
+      alert("You must select at least 1 type of character for password");
+    }
     //For Loor
     for (let i = 0; i <num1; i++) {
       let genRand = Math.floor(Math.random()*passwordCharacters.length);
@@ -51,11 +59,12 @@ function writePassword() {
       console.log(passwordCharacters[genRand])
     }
   }
+}
   console.log(newPasswordArray);
   let newPassword = newPasswordArray.join('');
   let passwordText = document.querySelector("#password");
   passwordText.value = newPassword;
-}
+}  
 
 
   

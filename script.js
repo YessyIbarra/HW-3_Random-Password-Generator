@@ -23,35 +23,41 @@ function writePassword() {
     if (confirm("Click 'Okay' if would you like to include lowercase letters")) {
       //Here I want to merge the two arrays (lower case array and the empty array) 
       passwordCharacters.push.apply(passwordCharacters, abcLowerArray);
+      console.log(passwordCharacters);
     }
 
     if (confirm("Click 'Okay' if you would like to add UPPERCASE letters")) {
       passwordCharacters.push.apply(passwordCharacters, abcUpperArray);
+      console.log(passwordCharacters);
     }
 
     if (confirm("Click 'Okay' if you would you like to add numbers (#'s)")) {
       passwordCharacters.push.apply(passwordCharacters, numberArray);
+      console.log(passwordCharacters);
     }
 
     if (confirm("Click 'Okay' if you would you like to add special characters ($%*#)")) {
       passwordCharacters.push.apply(passwordCharacters, symbolArray);
+      console.log(passwordCharacters);
     }
     console.log(typeof num1);
-
+    console.log(passwordCharacters);
     for (let i = 0; i <num1; i++) {
-      let genRand = Math.floor(Math.random(passwordCharacters.length));
+      let genRand = Math.floor(Math.random()*passwordCharacters.length);
+      console.log(genRand);
       newPassword.push(passwordCharacters[genRand]);
       console.log(passwordCharacters[genRand])
       //password characters are added to the empty string
     }
   }
   console.log(newPassword);
+  let realNewPassword = newPassword.toString();
+  let passwordText = document.querySelector("#password");
+  passwordText.value = newPassword;
 }
 
-  //this is where we need to figure out how to print password to screen after we convert the array of numbers to a string. 
-  //let realNewPassword = newPassword.toString()
-  //let passwordText = document.querySelector("#password");
-  //passwordText.value = newPassword;
+
+  
 
 
 

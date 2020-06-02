@@ -1,8 +1,8 @@
 # HW-3_Random-Password-Generator
 
-Create an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+Create an application with HTML, CSS and JavaScript that generates a random password based on user-selected criteria.
 
-https://yessyibarra.github.io/HW-3_Random-Password-Generator-github.io/ 
+Check it out: https://yessyibarra.github.io/HW-3_Random-Password-Generator-github.io/ 
 
 ![](passwordGenerator.png)
 

@@ -15,7 +15,7 @@ const symbolArray = ["~", "{", "|", "}", "`", "_", "^", "[", "]", "@", "?", ">",
 //Need to add empty string for the new generated password
 //Add empty array to push all constant variables into
 function writePassword() {
-  let newPassword = [];
+  let newPasswordArray = [];
   let passwordCharacters = [];
   let passwordLength = prompt("Enter number of desired characters for password")
   let num1 = parseInt (passwordLength);
@@ -42,16 +42,17 @@ function writePassword() {
     }
     console.log(typeof num1);
     console.log(passwordCharacters);
+
+    //For Loor
     for (let i = 0; i <num1; i++) {
       let genRand = Math.floor(Math.random()*passwordCharacters.length);
       console.log(genRand);
-      newPassword.push(passwordCharacters[genRand]);
+      newPasswordArray.push(passwordCharacters[genRand]);
       console.log(passwordCharacters[genRand])
-      //password characters are added to the empty string
     }
   }
-  console.log(newPassword);
-  let realNewPassword = newPassword.toString();
+  console.log(newPasswordArray);
+  let newPassword = newPasswordArray.join('');
   let passwordText = document.querySelector("#password");
   passwordText.value = newPassword;
 }
